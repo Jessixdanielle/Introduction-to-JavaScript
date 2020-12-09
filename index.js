@@ -17,7 +17,11 @@ Do the following:
 
    HINT: no function required
 */
-
+let age = null;
+const votingAge = 18;
+if (age >= votingAge){
+  console.log(true);
+}
 
 
 /*
@@ -30,7 +34,12 @@ Do the following:
 
    HINT: no function required
 */
-
+let a = 24;
+const b = 34;
+if (a<b){
+  a = a+b
+  console.log(a);
+}
 
 
 
@@ -45,7 +54,8 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let str = "1999"
+console.log(parseInt(str));
 
 
 
@@ -58,8 +68,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a*b
   }
 
 
@@ -74,8 +84,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(num){
+    return (num*7);
 }
 
 
@@ -105,12 +115,31 @@ Use the hungryDog function and feeding requirements below to do the following:
      7 - 12 months 4% of their body weight
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
-*/  
+*/ 
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
-
+function hungryDog(weight, age){
+  if(age>=1 && weight<=5)
+  {return(weight*0.05)}
+  
+  else if(age>=1 && weight>= 6 && weight<= 10)
+  {return(weight*0.04)}
+  
+  else if(age>=1 && weight>= 11 && weight<= 15)
+  {return(weight*0.03)}
+  
+  else if(age>=1 && weight> 15)
+  {return(weight*0.02)}
+  
+  else if(age<1 && age>=(2/12) && age<(4/12))
+  {return(weight*0.10)}
+  
+  else if(age<1 && age>=(4/12) && age<=(7/12))
+  {return(weight*0.20)}
+  
+  else if(age<1 && age>=(7/12))
+  {return(weight*0.04)}
+}
+hungryDog(15, 1);
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -133,10 +162,31 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+// Math.floor(Math.random() * 6) + 1  
 
-function game(user, computer){
-    /*add your code here*/
+let computer = Math.random();
+if (computer < 0.34) {
+    computer = 'rock';
+} else if (computer < 0.67) {
+    computer = 'paper';
+} else {
+    computer = 'scissors';
 }
+// 1 rock, 2 paper, 3 scissor
+function game(user, computer){
+  
+
+    if (user === computer)
+    { return "it's a tie"}
+    
+    else if (user=== 'rock' && computer=== 'scissors' || user=== 'paper' && computer ==='rock' || user === 'scissors' && computer=== 'paper')
+    { return "you win!" }
+    
+    else if (user=== 'scissors' && computer=== 'rock' || user=== 'rock' && computer ==='paper' || user === 'paper' && computer=== 'scissors')
+    { return "you lose!" }
+    
+}
+// game(1, randy);
   
   
 
@@ -151,8 +201,8 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(num){
+    return num * 0.621371
   }
 
 
@@ -165,8 +215,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(num){
+    return (num / 30.48);
   }
  
 
@@ -181,8 +231,10 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(num){
+        for (let i=num; i>0; i--){
+          return (`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i-1} bottles of soda on the wall`)
+        }
   }
 
 
@@ -202,21 +254,26 @@ Using the grade function below do the following:
 */
   
 function grade(num){
-    if(num < 100 && num >= 90){
-      return 'you got an A';
-    }else if(num <90 && num >= 80){
-      return 'you got a B';
-    }else if(num < 80 && num >= 70){
-      return 'you got a C';
-    }else if(num < 70 && num >= 60){
-      return 'you got a D';
-    }else if(num < 60){
-      return 'you got an F';
-    }
+  if (num >= 90){
+    return 'you got an A'
   }
-  
-  console.log('grade function', grade(85));
-  
+
+  else if (num >= 80){
+    return 'you got a B'
+  }
+
+  else if (num >= 70){
+    return 'you got a C'
+  }
+
+  else if (num >= 60){
+    return 'you got a D'
+  }
+
+  else{
+    return 'you got an F'
+  }
+} 
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
